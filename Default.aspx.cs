@@ -73,7 +73,7 @@ public partial class _Default : Page
             if(reitingas<min_d) // ar cia geresnis, nei buvo pries tai surastas 
             {
                 min_d = reitingas;
-                pavadinimas =  eiluteIsDB["pavadinimas"] + " " + eiluteIsDB["operatorius"];
+                pavadinimas =  eiluteIsDB["pavadinimas"].ToString().Trim() + " " + eiluteIsDB["operatorius"].ToString().Trim();
             }
             //užpildome lenteles viena eilute
             dr[0] = eiluteIsDB["sms"];
