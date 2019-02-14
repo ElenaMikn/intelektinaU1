@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,8 +23,9 @@ public partial class _Default : Page
     }
     private void skaiciuoti()
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         //string connectionString = @"server=ELENOSHP\SQLEXPRESS; database=Parduotuve; User ID=dbuser; pwd=dbuser"; // const
-        string connectionString = @"Server=DESKTOP-4JKI6TF\SQLEXPRESS; Database=planai; User Id=emuser; Password=emuser;";// Properties.Settings.Default.ConnectionString;
+        //string connectionString = @"Server=DESKTOP-4JKI6TF\SQLEXPRESS; Database=planai; User Id=emuser; Password=emuser;";// Properties.Settings.Default.ConnectionString;
 
         SqlConnection conn = new SqlConnection(connectionString);
         conn.Open();
